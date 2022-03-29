@@ -1,0 +1,39 @@
+                                                   
+
+
+static int count1=1;
+	static int count2 =1;
+	static void Longestpalindrome(String input) {
+		if(input.length()!=1) {
+			String reverse="";
+			for(int y=input.length()-1;y>=0;y--) {
+				reverse+=input.charAt(y);
+			}
+			if(reverse.equals(input)&&count2==count1) {
+				System.out.println(reverse);
+				count1++;
+			}			
+		}
+	}
+	static void print() {
+		if(count2==count1) {
+			System.out.println("no such palindrome");
+		}
+	}
+			
+			public static void main(String [] args) { 
+				String input="Geeks";
+				for(int i=0;i<=input.length()-1;i++) {
+					int j=input.length();
+					for(int y=i;y<=input.length()-1;y++) {
+						String storing=input.substring(i,j);//here using substring we are storing the values upto what you get in i ,j
+						Longestpalindrome(storing);          //method calling  
+						j--;
+					}
+				}
+				print();
+			}
+}
+		
+OUTPUT:
+ee
